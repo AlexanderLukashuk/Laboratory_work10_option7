@@ -15,12 +15,11 @@ namespace Task10v7
             Random random = new Random();
             int min1 = 0; // минимальный элемент первой строки
             int min3 = 0; // минимальный элемент третьей строки
-            int index1;
-            int index3;
             int tmpIndexI1 = 0;
             int tmpIndexI3 = 3;
-            int tmpIndexJ1;
-            int tmpIndexJ3;
+            int tmpIndexJ1 = 0;
+            int tmpIndexJ3 = 0;
+            int tempElem;
 
             for (int i = 0; i < row; i++)
             {
@@ -44,15 +43,19 @@ namespace Task10v7
                 if (min1 < A[tmpIndexI1, j])
                 {
                     min1 = A[tmpIndexI1, j];
-                    index1 = j;
+                    tmpIndexJ1 = j;
                 }
 
                 if (min3 < A[tmpIndexI3, j])
                 {
                     min3 = A[tmpIndexI3, j];
-                    index3 = j;
+                    tmpIndexJ3 = j;
                 }
             }
+
+            tempElem = A[tmpIndexI1, tmpIndexJ1];
+            A[tmpIndexI1, tmpIndexJ1] = A[tmpIndexI3, tmpIndexJ3];
+            A[tmpIndexI3, tmpIndexJ3] = tempElem;
 
 
 
