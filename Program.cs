@@ -18,7 +18,7 @@ namespace Task10v7
             int index1;
             int index3;
             int tmpIndex1 = 0;
-            int tmpIndex3 = 0;
+            int tmpIndex3 = 3;
 
             for (int i = 0; i < row; i++)
             {
@@ -39,15 +39,15 @@ namespace Task10v7
 
             for (int j = 0; j < column; j++)
             {
-                if (min1 < A[0, j])
+                if (min1 < A[tmpIndex1, j])
                 {
-                    min1 = A[0, j];
+                    min1 = A[tmpIndex1, j];
                     index1 = j;
                 }
 
-                if (min3 < A[2, j])
+                if (min3 < A[tmpIndex3, j])
                 {
-                    min3 = A[2, j];
+                    min3 = A[tmpIndex3, j];
                     index3 = j;
                 }
             }
