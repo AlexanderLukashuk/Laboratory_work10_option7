@@ -17,8 +17,10 @@ namespace Task10v7
             int min3 = 0; // минимальный элемент третьей строки
             int index1;
             int index3;
-            int tmpIndex1 = 0;
-            int tmpIndex3 = 3;
+            int tmpIndexI1 = 0;
+            int tmpIndexI3 = 3;
+            int tmpIndexJ1;
+            int tmpIndexJ3;
 
             for (int i = 0; i < row; i++)
             {
@@ -39,26 +41,20 @@ namespace Task10v7
 
             for (int j = 0; j < column; j++)
             {
-                if (min1 < A[tmpIndex1, j])
+                if (min1 < A[tmpIndexI1, j])
                 {
-                    min1 = A[tmpIndex1, j];
+                    min1 = A[tmpIndexI1, j];
                     index1 = j;
                 }
 
-                if (min3 < A[tmpIndex3, j])
+                if (min3 < A[tmpIndexI3, j])
                 {
-                    min3 = A[tmpIndex3, j];
+                    min3 = A[tmpIndexI3, j];
                     index3 = j;
                 }
             }
 
-            for (int i = 0; i < row; i++)
-            {
-                for (int j = 0; j < column; j++)
-                {
-                    if (i == tmpIndex1)
-                }
-            }
+
 
 
             //* Составить программу, которая заполняет квадратную матрицу порядка n 
