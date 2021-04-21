@@ -13,10 +13,10 @@ namespace Task10v7
             int column = 4;
             int[,] A = new int[row, column];
             Random random = new Random();
-            int min1 = 0; // минимальный элемент первой строки
-            int min3 = 0; // минимальный элемент третьей строки
+            int min1 = 100; // минимальный элемент первой строки
+            int min3 = 100; // минимальный элемент третьей строки
             int tmpIndexI1 = 0;
-            int tmpIndexI3 = 3;
+            int tmpIndexI3 = 2;
             int tmpIndexJ1 = 0;
             int tmpIndexJ3 = 0;
             int tempElem;
@@ -37,16 +37,17 @@ namespace Task10v7
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine();
 
             for (int j = 0; j < column; j++)
             {
-                if (min1 < A[tmpIndexI1, j])
+                if (min1 > A[tmpIndexI1, j])
                 {
                     min1 = A[tmpIndexI1, j];
                     tmpIndexJ1 = j;
                 }
 
-                if (min3 < A[tmpIndexI3, j])
+                if (min3 > A[tmpIndexI3, j])
                 {
                     min3 = A[tmpIndexI3, j];
                     tmpIndexJ3 = j;
@@ -57,7 +58,14 @@ namespace Task10v7
             A[tmpIndexI1, tmpIndexJ1] = A[tmpIndexI3, tmpIndexJ3];
             A[tmpIndexI3, tmpIndexJ3] = tempElem;
 
-
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    Console.Write($"{A[i, j]} ");
+                }
+                Console.WriteLine();
+            }
 
 
             //* Составить программу, которая заполняет квадратную матрицу порядка n 
