@@ -13,6 +13,12 @@ namespace Task10v7
             int column = 4;
             int[,] A = new int[row, column];
             Random random = new Random();
+            int min1 = 0; // минимальный элемент первой строки
+            int min3 = 0; // минимальный элемент третьей строки
+            int index1;
+            int index3;
+            int tmpIndex1 = 0;
+            int tmpIndex3 = 0;
 
             for (int i = 0; i < row; i++)
             {
@@ -29,6 +35,29 @@ namespace Task10v7
                     Console.Write($"{A[i, j]} ");
                 }
                 Console.WriteLine();
+            }
+
+            for (int j = 0; j < column; j++)
+            {
+                if (min1 < A[0, j])
+                {
+                    min1 = A[0, j];
+                    index1 = j;
+                }
+
+                if (min3 < A[2, j])
+                {
+                    min3 = A[2, j];
+                    index3 = j;
+                }
+            }
+
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    if (i == tmpIndex1)
+                }
             }
 
 
