@@ -66,16 +66,45 @@ namespace Task10v7
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine();
 
 
             //* Составить программу, которая заполняет квадратную матрицу порядка n 
             //* натуральными числами 1, 2, 3, .. ., n2,записывая их в нее "по спирали" 
             //* против часовой стрелки.
 
+            int n = 3, x = n - 1, y = n, d = -1, r = 9;
+            int[,] a = new int[n, n];
+            for (int i = 0; i < n; d *= -1)
+            {
+                for (int j = i; j < n; ++j)
+                {
+                    a[x, y += d] = r--;
+                }
+                for (int j = ++i; j < n; ++j)
+                {
+                    a[x += d, y] = r--;
+                }
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write($"{a[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+
+
 
 
             //* Найти в каждой строке матрицы координаты элемента, равного k(если он 
             //* там есть). Метод поиска - последовательный с барьером.
+
+            int rowCount;
+            int columnCount;
+            Console.Write
         }
     }
 }
