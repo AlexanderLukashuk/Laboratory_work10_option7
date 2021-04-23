@@ -168,19 +168,25 @@ namespace Task10v7
             int y = 0;
             for (x = 0; x < rowCount; x++)
             {
+                if (tmp == k)
+                {
+                    break;
+                }
+
                 for (y = 0; y < columnCount; y++)
                 {
                     if (array[x, y] == k)
                     {
+                        tmp = array[x, y];
                         break;
                     }
                 }
             }
             array[rowCount - 1, columnCount - 1] = last;
-            if ((x != (rowCount - 1) && y != (columnCount - 1)) || k == last)
-            {
+            //if ((x != (rowCount - 1) && y != (columnCount - 1)) || k == last)
+            //{
                 Console.WriteLine($"[{x}; {y}]");
-            }
+            //}
         }
     }
 }
