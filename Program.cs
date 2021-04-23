@@ -125,9 +125,9 @@ namespace Task10v7
             Console.Write("Введите количество столбцов матрицы: ");
             input = Console.ReadLine();
             tmp = int.Parse(input);
-            if (tmp < 1 || tmp > 20)
+            if (tmp < 1 || tmp > 100)
             {
-                while (tmp < 1 || tmp > 20)
+                while (tmp < 1 || tmp > 100)
                 {
                     Console.WriteLine("Введено неправильное число");
                     Console.Write("Попробуйте еще раз ввести количество столбцов матрицы: ");
@@ -168,11 +168,6 @@ namespace Task10v7
             int y = 0;
             for (x = 0; x < rowCount; x++)
             {
-                if (tmp == k)
-                {
-                    break;
-                }
-
                 for (y = 0; y < columnCount; y++)
                 {
                     if (array[x, y] == k)
@@ -181,12 +176,21 @@ namespace Task10v7
                         break;
                     }
                 }
+
+                if (tmp == k)
+                {
+                    break;
+                }
             }
             array[rowCount - 1, columnCount - 1] = last;
-            //if ((x != (rowCount - 1) && y != (columnCount - 1)) || k == last)
-            //{
-                Console.WriteLine($"[{x}; {y}]");
-            //}
+            if ((x != (rowCount - 1) && y != (columnCount - 1)) || k == last)
+            {
+                Console.WriteLine($"[{x + 1}; {y + 1}]");
+            }
+            else
+            {
+                Console.WriteLine("Заданного элемента нет в матрице");
+            }
         }
     }
 }
