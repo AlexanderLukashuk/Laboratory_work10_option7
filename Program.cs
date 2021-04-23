@@ -73,17 +73,17 @@ namespace Task10v7
             //* натуральными числами 1, 2, 3, .. ., n2,записывая их в нее "по спирали" 
             //* против часовой стрелки.
 
-            int n = 3, x = n - 1, y = n, d = -1, r = 9;
-            int[,] a = new int[n, n];
+            int n = 3, a = n - 1, b = n, d = -1, r = 9;
+            int[,] arr = new int[n, n];
             for (int i = 0; i < n; d *= -1)
             {
                 for (int j = i; j < n; ++j)
                 {
-                    a[x, y += d] = r--;
+                    arr[a, b += d] = r--;
                 }
                 for (int j = ++i; j < n; ++j)
                 {
-                    a[x += d, y] = r--;
+                    arr[a += d, b] = r--;
                 }
             }
 
@@ -91,7 +91,7 @@ namespace Task10v7
             {
                 for (int j = 0; j < n; j++)
                 {
-                    Console.Write($"{a[i, j]} ");
+                    Console.Write($"{arr[i, j]} ");
                 }
                 Console.WriteLine();
             }
@@ -143,12 +143,43 @@ namespace Task10v7
             input = Console.ReadLine();
             k = int.Parse(input);
 
-            for (int i = 0; i < row; i++)
+            for (int i = 0; i < rowCount; i++)
             {
-                for (int j = 0; j < column; j++)
+                for (int j = 0; j < columnCount; j++)
                 {
                     array[i, j] = random.Next(100);
                 }
+            }
+
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < columnCount; j++)
+                {
+                    Console.Write($"{array[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+            int last = array[rowCount - 1, columnCount - 1];
+            array[rowCount - 1, columnCount - 1] = k;
+
+            int x = 0;
+            int y = 0;
+            for (x = 0; x < rowCount; x++)
+            {
+                for (y = 0; y < columnCount; y++)
+                {
+                    if (array[x, y] == k)
+                    {
+                        break;
+                    }
+                }
+            }
+            array[rowCount - 1, columnCount - 1] = last;
+            if ((x != (rowCount - 1) && y != (columnCount - 1)) || k == last)
+            {
+                Console.WriteLine($"[{x}; {y}]");
             }
         }
     }
