@@ -104,6 +104,7 @@ namespace Task10v7
 
             int rowCount;
             int columnCount;
+            int k;
             string input;
             int tmp;
             Console.Write("Введите количество строк матрицы: ");
@@ -135,6 +136,20 @@ namespace Task10v7
                 }
             }
             columnCount = tmp;
+
+            int[,] array = new int[rowCount, columnCount];
+
+            Console.Write("Введине число: ");
+            input = Console.ReadLine();
+            k = int.Parse(input);
+
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    array[i, j] = random.Next(100);
+                }
+            }
         }
     }
 }
