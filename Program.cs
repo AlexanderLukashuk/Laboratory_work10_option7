@@ -104,7 +104,37 @@ namespace Task10v7
 
             int rowCount;
             int columnCount;
-            Console.Write
+            string input;
+            int tmp;
+            Console.Write("Введите количество строк матрицы: ");
+            input = Console.ReadLine();
+            tmp = int.Parse(input);
+            if (tmp < 1 || tmp > 20)
+            {
+                while (tmp < 1 || tmp > 20)
+                {
+                    Console.WriteLine("Введено неправильное число");
+                    Console.Write("Попробуйте еще раз ввести количество строк матрицы: ");
+                    input = Console.ReadLine();
+                    tmp = int.Parse(input);
+                }
+            }
+            rowCount = tmp;
+
+            Console.Write("Введите количество столбцов матрицы: ");
+            input = Console.ReadLine();
+            tmp = int.Parse(input);
+            if (tmp < 1 || tmp > 20)
+            {
+                while (tmp < 1 || tmp > 20)
+                {
+                    Console.WriteLine("Введено неправильное число");
+                    Console.Write("Попробуйте еще раз ввести количество столбцов матрицы: ");
+                    input = Console.ReadLine();
+                    tmp = int.Parse(input);
+                }
+            }
+            columnCount = tmp;
         }
     }
 }
